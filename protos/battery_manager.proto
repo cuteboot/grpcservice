@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "cuteboot.grpcbridge";
+option java_outer_classname = "BatteryManagerProtos";
+
+package grpcbridge;
+
+service BatteryManager {
+    rpc GetProperty(GetPropertyRequest) returns (GetPropertyResponse) {}
+}
+
+message EmptyRequest { }
+
+message BooleanResponse {
+    bool value = 1;
+}
+
+message GetPropertyRequest {
+    int32 id = 1;
+}
+
+message GetPropertyResponse {
+    int64 value = 1;
+}
+
